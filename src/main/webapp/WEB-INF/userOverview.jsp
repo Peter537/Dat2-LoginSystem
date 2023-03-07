@@ -7,5 +7,10 @@
 <body>
 <h1>Velkommen til administrator siden</h1>
 
+<c:forEach var="person" items="${applicationScope.personMap}">
+    <br>
+    ${person.value.name}
+</c:forEach>
+
 </body>
 </html>
