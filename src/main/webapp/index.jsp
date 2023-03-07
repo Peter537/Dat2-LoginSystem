@@ -8,7 +8,10 @@
 <h1><%= "Hello World!" %>
 </h1>
 <br/>
-<form action="hello-servlet">
+
+${requestScope.besked}
+
+<form action="login-servlet">
     <label for="name">Navn:</label><br>
     <input type="text" id="name" name="name" value="Peter"><br>
     <label for="password">Password:</label><br>
