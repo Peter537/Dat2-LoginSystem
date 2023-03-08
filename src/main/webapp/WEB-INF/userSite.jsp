@@ -26,7 +26,7 @@ ${requestScope.besked}
     <input type="submit" value="Gå til administrator side">
 </form>
 
-<form action="delete-user-servlet" method="get">
+<form action="delete-self-user-servlet" method="get">
     <input type="submit" value="Slet bruger">
 </form>
 
