@@ -22,11 +22,11 @@ ${requestScope.besked}
 ${requestScope.newUserBesked}
 <form action="login-servlet" method="post">
     <label for="newUserName">Navn:</label><br>
-    <input type="text" id="newUserName" name="newUserName" value=""><br><br>
+    <input type="text" id="newUserName" name="newUserName" placeholder="Enter your name"><br><br>
     <label for="newUserPassword">Password:</label><br>
-    <input type="text" id="newUserPassword" name="newUserPassword" value=""><br><br>
+    <input type="text" id="newUserPassword" name="newUserPassword" placeholder="Enter your password"><br><br>
     <label for="newUserConfirmPassword">Confirm Password:</label><br>
-    <input type="text" id="newUserConfirmPassword" name="newUserConfirmPassword" value=""><br><br>
+    <input type="text" id="newUserConfirmPassword" name="newUserConfirmPassword" placeholder="Enter your password again"><br><br>
     <input type="submit" value="Submit">
 </form>
 </body>
