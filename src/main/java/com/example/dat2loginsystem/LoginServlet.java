@@ -30,6 +30,9 @@ public class LoginServlet extends HttpServlet {
         getServletContext().setAttribute("personMap", personMap);
     }
 
+    /**
+     * Logging in with a user already in the system
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String name = request.getParameter("name");
@@ -55,6 +58,9 @@ public class LoginServlet extends HttpServlet {
         request.getRequestDispatcher("WEB-INF/userSite.jsp").forward(request, response);
     }
 
+    /**
+     * Creating a new user
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String name = request.getParameter("newUserName");
