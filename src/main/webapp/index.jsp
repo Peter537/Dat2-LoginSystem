@@ -2,15 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Login Side</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
-</h1>
+<h1>Login her</h1>
 <br/>
-
 ${requestScope.besked}
-
 <form action="login-servlet">
     <label for="name">Navn:</label><br>
     <input type="text" id="name" name="name" value="Peter"><br>
