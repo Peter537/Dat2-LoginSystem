@@ -54,4 +54,29 @@ public class LoginServlet extends HttpServlet {
         session.setAttribute("person", person);
         request.getRequestDispatcher("WEB-INF/userSite.jsp").forward(request, response);
     }
+
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        String name = request.getParameter("newUserName");
+        String password = request.getParameter("newUserPassword");
+        String confirmPassword = request.getParameter("newUserConfirmPassword");
+
+        if (!password.equals(confirmPassword)) {
+            request.setAttribute("newUserBesked", "Password doesn't match");
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
+
+        Map<String, Person> personMap = (Map<String, Person>) getServletContext().getAttribute("personMap");
+        if (personMap.containsKey(name)) {
+            request.setAttribute("newUserBesked", "Name already exists");
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
+
+        Person person = new Person(name, password);
+        personMap.put(name, person);
+
+        HttpSession session = request.getSession();
+        session.setAttribute("person", person);
+        request.getRequestDispatcher("WEB-INF/userSite.jsp").forward(request, response);
+    }
 }
