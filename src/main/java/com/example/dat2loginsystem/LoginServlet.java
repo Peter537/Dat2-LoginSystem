@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
     }
 
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String name = request.getParameter("name");
         String password = request.getParameter("password");
 
@@ -56,7 +56,7 @@ public class LoginServlet extends HttpServlet {
     }
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String name = request.getParameter("newUserName");
         String password = request.getParameter("newUserPassword");
         String confirmPassword = request.getParameter("newUserConfirmPassword");
