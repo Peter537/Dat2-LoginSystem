@@ -44,7 +44,7 @@
         <tr>
             <td>${item.title}</td>
             <td>${item.description}</td>
-            <td>${item.timeCreated}</td>
+            <td>${item.getFormattedTime()}</td>
         </tr>
     </c:forEach>
 </table>

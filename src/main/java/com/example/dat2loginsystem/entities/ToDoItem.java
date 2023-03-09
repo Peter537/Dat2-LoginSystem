@@ -1,5 +1,7 @@
 package com.example.dat2loginsystem.entities;
 
+import java.text.SimpleDateFormat;
+
 public class ToDoItem {
 
     private String title;
@@ -34,5 +36,9 @@ public class ToDoItem {
 
     public void setTimeCreated(long timeCreated) {
         this.timeCreated = timeCreated;
+    }
+
+    public String getFormattedTime() {
+        return new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(this.timeCreated);
     }
 }
