@@ -1,12 +1,11 @@
 package com.example.dat2loginsystem;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.time.LocalDateTime;
+import java.util.*;
 
 import com.example.dat2loginsystem.entities.Person;
+import com.example.dat2loginsystem.entities.ToDoItem;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -18,12 +17,17 @@ public class LoginServlet extends HttpServlet {
     public void init() {
         List<Person> personList = new ArrayList<>();
         personList.add(new Person("Peter", "123", "Admin"));
+        personList.get(0).addToDoListItem(new ToDoItem("TestItem1", "TestDescription1", System.currentTimeMillis()));
         for (int i = 1; i <= 5; i++) {
             personList.add(new Person("User" + i, "kode" + i));
         }
 
         Map<String, Person> personMap = new HashMap<>();
         for (Person person : personList) {
+            for (int j = 1; j < 4; j++) {
+                int random = (int) (Math.random() * 10);
+                person.addToDoListItem(new ToDoItem("Item " + j, "Description: " + random, System.currentTimeMillis() + new Random().nextInt(10000)));
+            }
             personMap.put(person.getName(), person);
         }
 

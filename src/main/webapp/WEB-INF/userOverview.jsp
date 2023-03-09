@@ -46,6 +46,10 @@
                 <input type="text" hidden name="editUser" value="${person.value.name}">
                 <input type="submit" value="Rediger">
             </form>
+            <form action="to-do-list-servlet">
+                <input type="text" hidden name="checkToDoListUser" value="${person.value.name}">
+                <input type="submit" value="Huskeliste">
+            </form>
         </td>
     </tr>
     </c:forEach>
