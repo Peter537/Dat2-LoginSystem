@@ -39,12 +39,26 @@
         <th>Title</th>
         <th>Description</th>
         <th>Time Created</th>
+        <th>Valg</th>
     </tr>
     <c:forEach var="item" items="${requestScope.person.toDoList}">
         <tr>
             <td>${item.title}</td>
             <td>${item.description}</td>
             <td>${item.getFormattedTime()}</td>
+            <td>
+                <form action="delete-to-do-list-item-servlet" method="get">
+                    <input type="text" hidden name="deleteItemUser" value="${requestScope.person.name}">
+                    <input type="text" hidden name="deleteItemTitle" value="${item.title}">
+                    <input type="submit" value="Slet">
+                </form>
+                <br>
+                <form action="edit-to-do-list-item-servlet" method="get">
+                    <input type="text" hidden name="editItemUser" value="${requestScope.person.name}">
+                    <input type="text" hidden name="editItemTitle" value="${item.title}">
+                    <input type="submit" value="Rediger">
+                </form>
+            </td>
         </tr>
     </c:forEach>
 </table>
