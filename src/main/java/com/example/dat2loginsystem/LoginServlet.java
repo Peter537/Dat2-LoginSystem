@@ -71,15 +71,22 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("newUserPassword");
         String confirmPassword = request.getParameter("newUserConfirmPassword");
 
+        if (name.equals("") || password.equals("") || confirmPassword.equals("")) {
+            request.setAttribute("newUserBesked", "Fields cannot be empty");
+            request.getRequestDispatcher("createAccount.jsp").forward(request, response);
+        }
+
         if (!password.equals(confirmPassword)) {
             request.setAttribute("newUserBesked", "Password doesn't match");
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            request.getRequestDispatcher("createAccount.jsp").forward(request, response);
         }
 
         Map<String, Person> personMap = (Map<String, Person>) getServletContext().getAttribute("personMap");
+        System.out.println(personMap.values());
+        System.out.println(" '"+ name + "' ");
         if (personMap.containsKey(name)) {
             request.setAttribute("newUserBesked", "Name already exists");
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            request.getRequestDispatcher("createAccount.jsp").forward(request, response);
         }
 
         Person person = new Person(name, password);

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>Log ind</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -12,7 +12,7 @@
 <body>
 <section class="vh-100 bg-dark d-flex justify-content-center align-items-center">
     <div class="bg-secondary gap-3 d-flex flex-column" style="padding: 2.2rem 5rem;">
-        <label class="w-100 text-center DefaultText">Login</label>
+        <label class="w-100 text-center DefaultText">Log ind</label>
         <form class="d-flex flex-column gap-3 DefaultForm" action="login-servlet" method="get">
             <div class="d-flex flex-column gap-2">
                 <label class="DefaultText" for="name">Navn</label>
