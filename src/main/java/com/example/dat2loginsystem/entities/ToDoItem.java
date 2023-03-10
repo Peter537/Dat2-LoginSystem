@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 
 public class ToDoItem {
 
+    private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
     private String title;
     private String description;
     private long timeCreated;
@@ -39,6 +41,6 @@ public class ToDoItem {
     }
 
     public String getFormattedTime() {
-        return new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(this.timeCreated);
+        return simpleDateFormat.format(this.timeCreated);
     }
 }
