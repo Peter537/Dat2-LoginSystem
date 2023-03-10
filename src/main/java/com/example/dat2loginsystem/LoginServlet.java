@@ -42,9 +42,6 @@ public class LoginServlet extends HttpServlet {
         String name = request.getParameter("name");
         String password = request.getParameter("password");
 
-        System.out.println("name: " + name);
-        System.out.println("password: " + password);
-
         Map<String, Person> personMap = (Map<String, Person>) getServletContext().getAttribute("personMap");
         if (!personMap.containsKey(name)) {
             request.setAttribute("besked", "User not found");
@@ -82,8 +79,6 @@ public class LoginServlet extends HttpServlet {
         }
 
         Map<String, Person> personMap = (Map<String, Person>) getServletContext().getAttribute("personMap");
-        System.out.println(personMap.values());
-        System.out.println(" '"+ name + "' ");
         if (personMap.containsKey(name)) {
             request.setAttribute("newUserBesked", "Name already exists");
             request.getRequestDispatcher("createAccount.jsp").forward(request, response);
