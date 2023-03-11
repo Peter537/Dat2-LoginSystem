@@ -1,4 +1,4 @@
-package com.example.dat2loginsystem;
+package com.example.dat2loginsystem.web;
 
 import java.io.*;
 import java.util.*;

@@ -1,4 +1,4 @@
-package com.example.dat2loginsystem;
+package com.example.dat2loginsystem.web;
 
 import com.example.dat2loginsystem.entities.Person;
 import com.example.dat2loginsystem.entities.ToDoItem;
